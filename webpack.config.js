@@ -12,15 +12,20 @@ const { PHASE, ACTION } = process.env;
 const isDev = PHASE === 'DEV';
 const isDevServer = ACTION === 'DEV_SERVER';
 const mode = isDev ? 'development' : 'production';
-const libPath = resolve('lib', 'index.js');
-const examplePath = resolve('examples/browser', 'index.js');
+const libPath = resolve('lib');
+const examplePath = resolve('examples', 'index.js');
+
+const getEntryPath = v => resolve(libPath, v);
 
 module.exports = {
   context: ROOT_PATH,
   target: 'web',
   mode,
   entry: {
-    emnida: libPath,
+    emnida: getEntryPath('index.js'),
+    type: getEntryPath('type.js'),
+    ua: getEntryPath('ua.js'),
+    number: getEntryPath('number.js'),
     ...(isDevServer ? { index: examplePath } : {}),
   },
   output: {
