@@ -1,73 +1,59 @@
 // eslint-disable-next-line
-import { isIterableObject } from '../../../lib/type';
+import { isSet } from '../../../lib/type';
 
-describe('isIterableObject', () => {
-  it('should be return true if iterable object type', () => {
-    // Given / When
-    const result = isIterableObject([]);
-    // Then
-    expect(result).toEqual(true);
-  });
-
-  it('should be return true if map type', () => {
-    // Given / When
-    const result = isIterableObject(new Map());
-    // Then
-    expect(result).toEqual(true);
-  });
-
+describe('isSet', () => {
   it('should be return true if set type', () => {
     // Given / When
-    const result = isIterableObject(new Set());
+    const result = isSet(new Set());
     // Then
     expect(result).toEqual(true);
   });
 
-  it('should be return true if string type', () => {
+  it('should be return false if string type', () => {
     // Given / When
-    const result = isIterableObject('test');
+    const result = isSet('test');
     // Then
-    expect(result).toEqual(true);
+    expect(result).toEqual(false);
   });
 
   it('should be return false if number type', () => {
     // Given / When
-    const result = isIterableObject(0);
+    const result = isSet(0);
     // Then
     expect(result).toEqual(false);
   });
 
   it('should be return false if boolean type', () => {
     // Given / When
-    const result = isIterableObject(true);
+    const result = isSet(true);
     // Then
     expect(result).toEqual(false);
   });
 
   it('should be return false if null type', () => {
     // Given / When
-    const result = isIterableObject(null);
+    const result = isSet(null);
     // Then
     expect(result).toEqual(false);
   });
 
   it('should be return false if undefined type', () => {
     // Given / When
-    const result = isIterableObject(undefined);
+    const result = isSet(undefined);
     // Then
     expect(result).toEqual(false);
   });
 
   it('should be return false if symbol type', () => {
     // Given / When
-    const result = isIterableObject(Symbol(1));
+    const result = isSet(Symbol(1));
     // Then
     expect(result).toEqual(false);
   });
 
   it('should be return false if object type', () => {
     // Given / When
-    const result = isIterableObject({});
+    const result = isSet({});
     // Then
     expect(result).toEqual(false);
   });

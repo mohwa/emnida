@@ -1,73 +1,66 @@
 // eslint-disable-next-line
-import { isIterableObject } from '../../../lib/type';
+import { isRegExp } from '../../../lib/type';
 
-describe('isIterableObject', () => {
-  it('should be return true if iterable object type', () => {
+describe('isRegExp', () => {
+  it('should be return true if regexp type', () => {
     // Given / When
-    const result = isIterableObject([]);
+    const result = isRegExp(/\d+/);
     // Then
     expect(result).toEqual(true);
   });
 
-  it('should be return true if map type', () => {
+  it('should be return false if regexp type', () => {
     // Given / When
-    const result = isIterableObject(new Map());
+    const result = isRegExp(new RegExp('\\d+'));
     // Then
     expect(result).toEqual(true);
   });
 
-  it('should be return true if set type', () => {
+  it('should be return false if string type', () => {
     // Given / When
-    const result = isIterableObject(new Set());
+    const result = isRegExp('test');
     // Then
-    expect(result).toEqual(true);
-  });
-
-  it('should be return true if string type', () => {
-    // Given / When
-    const result = isIterableObject('test');
-    // Then
-    expect(result).toEqual(true);
+    expect(result).toEqual(false);
   });
 
   it('should be return false if number type', () => {
     // Given / When
-    const result = isIterableObject(0);
+    const result = isRegExp(0);
     // Then
     expect(result).toEqual(false);
   });
 
   it('should be return false if boolean type', () => {
     // Given / When
-    const result = isIterableObject(true);
+    const result = isRegExp(true);
     // Then
     expect(result).toEqual(false);
   });
 
   it('should be return false if null type', () => {
     // Given / When
-    const result = isIterableObject(null);
+    const result = isRegExp(null);
     // Then
     expect(result).toEqual(false);
   });
 
   it('should be return false if undefined type', () => {
     // Given / When
-    const result = isIterableObject(undefined);
+    const result = isRegExp(undefined);
     // Then
     expect(result).toEqual(false);
   });
 
   it('should be return false if symbol type', () => {
     // Given / When
-    const result = isIterableObject(Symbol(1));
+    const result = isRegExp(Symbol(1));
     // Then
     expect(result).toEqual(false);
   });
 
   it('should be return false if object type', () => {
     // Given / When
-    const result = isIterableObject({});
+    const result = isRegExp({});
     // Then
     expect(result).toEqual(false);
   });

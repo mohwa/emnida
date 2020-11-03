@@ -4,7 +4,7 @@ import { isBoolean } from '../../../lib/type';
 describe('isBoolean', () => {
   it('should be return true if boolean type', () => {
     // Given / When
-    const result = isBoolean(true);
+    const result = isBoolean(false);
     // Then
     expect(result).toEqual(true);
   });

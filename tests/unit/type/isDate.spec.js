@@ -1,59 +1,59 @@
 // eslint-disable-next-line
-import { isBigInt } from '../../../lib/type';
+import { isDate } from '../../../lib/type';
 
-describe('isSymbol', () => {
-  it('should be return true if bigint type', () => {
+describe('isDate', () => {
+  it('should be return true if date type', () => {
     // Given / When
-    const result = isBigInt(10n);
+    const result = isDate(new Date());
     // Then
     expect(result).toEqual(true);
   });
 
   it('should be return false if string type', () => {
     // Given / When
-    const result = isBigInt('test');
+    const result = isDate('test');
     // Then
     expect(result).toEqual(false);
   });
 
   it('should be return false if number type', () => {
     // Given / When
-    const result = isBigInt(0);
+    const result = isDate(0);
     // Then
     expect(result).toEqual(false);
   });
 
   it('should be return false if boolean type', () => {
     // Given / When
-    const result = isBigInt(true);
+    const result = isDate(true);
     // Then
     expect(result).toEqual(false);
   });
 
   it('should be return false if null type', () => {
     // Given / When
-    const result = isBigInt(null);
+    const result = isDate(null);
     // Then
     expect(result).toEqual(false);
   });
 
   it('should be return false if undefined type', () => {
     // Given / When
-    const result = isBigInt(undefined);
+    const result = isDate(undefined);
     // Then
     expect(result).toEqual(false);
   });
 
   it('should be return false if symbol type', () => {
     // Given / When
-    const result = isBigInt(Symbol(1));
+    const result = isDate(Symbol(1));
     // Then
     expect(result).toEqual(false);
   });
 
   it('should be return false if object type', () => {
     // Given / When
-    const result = isBigInt({});
+    const result = isDate({});
     // Then
     expect(result).toEqual(false);
   });

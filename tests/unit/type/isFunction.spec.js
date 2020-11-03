@@ -4,6 +4,13 @@ import { isFunction } from '../../../lib/type';
 describe('isFunction', () => {
   it('should be return true if function type', () => {
     // Given / When
+    const result = isFunction(function() {});
+    // Then
+    expect(result).toEqual(true);
+  });
+
+  it('should be return true if function type', () => {
+    // Given / When
     const result = isFunction(() => {});
     // Then
     expect(result).toEqual(true);
@@ -18,7 +25,7 @@ describe('isFunction', () => {
 
   it('should be return false if number type', () => {
     // Given / When
-    const result = isFunction(0);
+    const result = isFunction(1);
     // Then
     expect(result).toEqual(false);
   });

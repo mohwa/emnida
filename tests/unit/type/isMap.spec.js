@@ -1,73 +1,59 @@
 // eslint-disable-next-line
-import { isIterableObject } from '../../../lib/type';
+import { isMap } from '../../../lib/type';
 
-describe('isIterableObject', () => {
-  it('should be return true if iterable object type', () => {
-    // Given / When
-    const result = isIterableObject([]);
-    // Then
-    expect(result).toEqual(true);
-  });
-
+describe('isMap', () => {
   it('should be return true if map type', () => {
     // Given / When
-    const result = isIterableObject(new Map());
+    const result = isMap(new Map());
     // Then
     expect(result).toEqual(true);
   });
 
-  it('should be return true if set type', () => {
+  it('should be return false if string type', () => {
     // Given / When
-    const result = isIterableObject(new Set());
+    const result = isMap('test');
     // Then
-    expect(result).toEqual(true);
-  });
-
-  it('should be return true if string type', () => {
-    // Given / When
-    const result = isIterableObject('test');
-    // Then
-    expect(result).toEqual(true);
+    expect(result).toEqual(false);
   });
 
   it('should be return false if number type', () => {
     // Given / When
-    const result = isIterableObject(0);
+    const result = isMap(0);
     // Then
     expect(result).toEqual(false);
   });
 
   it('should be return false if boolean type', () => {
     // Given / When
-    const result = isIterableObject(true);
+    const result = isMap(true);
     // Then
     expect(result).toEqual(false);
   });
 
   it('should be return false if null type', () => {
     // Given / When
-    const result = isIterableObject(null);
+    const result = isMap(null);
     // Then
     expect(result).toEqual(false);
   });
 
   it('should be return false if undefined type', () => {
     // Given / When
-    const result = isIterableObject(undefined);
+    const result = isMap(undefined);
     // Then
     expect(result).toEqual(false);
   });
 
   it('should be return false if symbol type', () => {
     // Given / When
-    const result = isIterableObject(Symbol(1));
+    const result = isMap(Symbol(1));
     // Then
     expect(result).toEqual(false);
   });
 
   it('should be return false if object type', () => {
     // Given / When
-    const result = isIterableObject({});
+    const result = isMap({});
     // Then
     expect(result).toEqual(false);
   });

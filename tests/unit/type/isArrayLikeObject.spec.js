@@ -23,6 +23,20 @@ describe('isSymbol', () => {
     expect(result).toEqual(true);
   });
 
+  it('should be return true if Map object', () => {
+    // Given / When
+    const result = isArrayLikeObject(new Map());
+    // Then
+    expect(result).toEqual(true);
+  });
+
+  it('should be return true if Set object', () => {
+    // Given / When
+    const result = isArrayLikeObject(new Set());
+    // Then
+    expect(result).toEqual(true);
+  });
+
   it('should be return false if number type', () => {
     // Given / When
     const result = isArrayLikeObject(0);
