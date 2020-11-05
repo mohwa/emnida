@@ -1,4 +1,4 @@
-import { isEqual } from '../lib';
+import { isEqual, isEqualAtStringFunction, isEqualAtStringSymbol } from '../lib';
 import { isFunction } from '../lib/type';
 import { getGlobalObject } from '../lib/_utils';
 
@@ -15,12 +15,18 @@ console.log(isEqual(null, ''));
 
 if (isFunction(globalObject?.Symbol)) {
   console.log(isEqual(Symbol(3), false));
+  console.log(isEqual(Symbol(3), Symbol(3)));
+
+  console.log(isEqualAtStringSymbol(Symbol(3), Symbol(3)));
+
+  const symbol4 = Symbol(4);
+  console.log(isEqual(symbol4, symbol4));
 }
 
 console.log('OBJECT');
 
 console.log(isEqual({ x: 2, y: 1 }, { y: 1, x: 2 }));
-console.log(isEqual({ x: 2, y: 1 }, { x: 2, y: 1 }));
+console.log(isEqual({ x: 2, y: 1, z: '3' }, { x: 2, y: 1, z: '3' }));
 console.log(isEqual([1, 3, 4, 5], [1, 3, 4, 5]));
 
 console.log(isEqual([1, { xx: 1 }, 4, 5], [1, { yy: 1 }, 4, 5]));
@@ -38,6 +44,27 @@ console.log(
 );
 console.log(
   isEqual(
+    () => {
+      console.log(1);
+    },
+    () => {
+      console.log(1);
+    }
+  )
+);
+
+console.log(
+  isEqualAtStringFunction(
+    function() {
+      console.log(2);
+    },
+    function() {
+      console.log(2);
+    }
+  )
+);
+console.log(
+  isEqualAtStringFunction(
     () => {
       console.log(1);
     },
