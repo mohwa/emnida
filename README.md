@@ -14,6 +14,8 @@ IE9 later, All modern browsers(Chrome, Safari, Edge ...), NodeJS(`10.0.0` versio
 
 ## Normal Type API
 
+These apis will use to check normal type like the code follows
+
 ```javascript
 import {
   isString,
@@ -58,14 +60,10 @@ console.log(isRegExp(new RegExp('\\s+'))); // true
 
 ## Special Type API
 
+These apis will use to check in the special cases like the DOM element or empty value ...
+
 ```javascript
-import {
-  isArrayLikeObject,
-  isElement,
-  isEmpty,
-  isIterableObject,
-  isPrimitive,
-} from 'emnida';
+import { isArrayLikeObject, isElement, isEmpty, isIterableObject, isPrimitive } from 'emnida';
 
 console.log(isPrimitive('test')); // true
 console.log(isPrimitive(1)); // true
@@ -83,6 +81,8 @@ console.log(isIterableObject([])); // true
 ```
 
 ## isEqual API
+
+This api will use to compare two value like the code follows
 
 ```javascript
 import { isEqual } from 'emnida';
