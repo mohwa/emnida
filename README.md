@@ -1,6 +1,6 @@
 # emnida
 
-emnida library will be able to using when a type and a value compare in javascript
+emnida library will be using when a type and a value compare in javascript
 
 # Install
 
@@ -12,10 +12,74 @@ npm i emnida
 
 IE9 later, All modern browsers(Chrome, Safari, Edge ...), NodeJS(`10.0.0` version later).
 
-## Type API
+## Normal Type API
 
 ```javascript
-import { isArray } from 'emnida';
+import {
+  isString,
+  isArray,
+  isBigInt,
+  isBoolean,
+  isDate,
+  isFunction,
+  isMap,
+  isNull,
+  isNumber,
+  isPlainObject,
+  isRegExp,
+  isSet,
+  isSymbol,
+  isUndefined,
+  isWeakMap,
+  isWeakSet,
+} from 'emnida';
+
+console.log(isString('test')); // true
+console.log(isNumber(1)); // true
+console.log(isBoolean(true)); // true
+console.log(isNull(null)); // true
+console.log(isUndefined(undefined)); // true
+console.log(isSymbol(Symbol(1))); // true
+console.log(isBigInt(10n)); // true
+
+console.log(isPlainObject({})); // true
+console.log(isArray([])); // true
+console.log(isFunction(() => {})); // true
+
+console.log(isMap(new Map())); // true
+console.log(isWeakMap(new WeakMap())); // true
+
+console.log(isSet(new Set())); // true
+console.log(isWeakSet(new WeakSet())); // true
+
+console.log(isDate(new Date())); // true
+console.log(isRegExp(new RegExp('\\s+'))); // true
+```
+
+## Special Type API
+
+```javascript
+import {
+  isArrayLikeObject,
+  isElement,
+  isEmpty,
+  isIterableObject,
+  isPrimitive,
+} from 'emnida';
+
+console.log(isPrimitive('test')); // true
+console.log(isPrimitive(1)); // true
+console.log(isPrimitive(true)); // true
+console.log(isPrimitive(null)); // true
+console.log(isPrimitive(undefined)); // true
+console.log(isPrimitive(Symbol(1))); // true
+console.log(isPrimitive(10n)); // true
+
+console.log(isElement(document.documentElement)); // true
+console.log(isArrayLikeObject('test')); // true
+
+console.log(isEmpty(null)); // true
+console.log(isIterableObject([])); // true
 ```
 
 ## isEqual API
@@ -30,7 +94,7 @@ console.log(isEqual(true, true)); // true
 
 console.log(isEqual(undefined, null)); // false
 console.log(isEqual(null, '')); // false
-console.log(isEqual(Symbol(3), false)); // false
+console.log(isEqual(Symbol(3), Symbol(3))); // false
 
 // Object type examples
 console.log(isEqual({ x: 2, y: 1 }, { y: 1, x: 2 })); // true
@@ -49,7 +113,7 @@ console.log(
       console.log(2);
     }
   )
-); // true
+); // false
 
 console.log(
   isEqual(
@@ -60,7 +124,7 @@ console.log(
       console.log(1);
     }
   )
-); // true
+); // false
 
 // Constructor type examples
 console.log(isEqual(new String(1), new String(1))); // true
