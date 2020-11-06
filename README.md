@@ -1,6 +1,6 @@
-# emnida.js
+# emnida
 
-emnida library will be using when a type and a value compare in javascript
+`emnida` library will be used to check when any situation like a data type or value check in the javascript.
 
 # Install
 
@@ -14,7 +14,7 @@ IE9 later, All modern browsers(Chrome, Safari, Edge ...), NodeJS(`10.0.0` versio
 
 ## Normal Type API
 
-These apis will use to check normal type like the code follows
+These apis will be able to used to check normal data type like the code follows.
 
 ```javascript
 import {
@@ -34,7 +34,7 @@ import {
   isUndefined,
   isWeakMap,
   isWeakSet,
-} from 'emnida';
+} from 'emnida/type'; // You also can use the `emnida` string instead the `emnida/type` string
 
 console.log(isString('test')); // true
 console.log(isNumber(1)); // true
@@ -60,10 +60,10 @@ console.log(isRegExp(new RegExp('\\s+'))); // true
 
 ## Special Type API
 
-These apis will use to check in the special cases like the DOM element or empty value ...
+These apis will be able to use in the special cases like the DOM element or empty value check.
 
 ```javascript
-import { isArrayLikeObject, isElement, isEmpty, isIterableObject, isPrimitive } from 'emnida';
+import { isArrayLikeObject, isElement, isEmpty, isIterableObject, isPrimitive } from 'emnida/type';
 
 console.log(isPrimitive('test')); // true
 console.log(isPrimitive(1)); // true
@@ -82,7 +82,7 @@ console.log(isIterableObject([])); // true
 
 ## isEqual API
 
-This api will use to compare two value like the code follows
+This api will be able to used to compare two value like the code follows
 
 ```javascript
 import { isEqual } from 'emnida';
@@ -178,4 +178,16 @@ const url3 = new URL('https://javascript.info/profile/admin-1');
 
 console.log(isEqual(url1, url2)); // true
 console.log(isEqual(url1, url3)); // false
+```
+
+## isEqualAtStringFunction or isEqualAtStringSymbol API
+
+Below code will be evaluated to a `false` by the javascript mechanism, but you may will be able to turn to a true via use those `apis` to use. 
+
+```javascript
+isEqual(() => {}, () => {}); // false
+isEqual(Symbol(3), Symbol(3)); // false
+
+isEqualAtStringFunction(() => {}, () => {}); // true
+isEqualAtStringSymbol(Symbol(3), Symbol(3)); // true
 ```
