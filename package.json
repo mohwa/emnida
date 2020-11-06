@@ -1,22 +1,22 @@
 {
   "name": "emnida",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "description": "This library will using for the check to some type on the javascript.",
   "keywords": [
     "emnida",
     "is"
   ],
-  "main": "./index.js",
+  "main": "emnida.js",
   "scripts": {
     "webpack-dev-server": "webpack-dev-server --config webpack.config.js",
     "webpack": "webpack --config webpack.config.js",
     "start": "npm run clean && cross-env PHASE=DEV ACTION=DEV_SERVER webpack-dev-server",
     "start:node": "babel-node ./examples",
     "build": "npm run clean && cross-env PHASE=DEV ACTION=BUILD npm run webpack && cross-env PHASE=PUBLISH ACTION=BUILD npm run webpack",
-    "deploy": "npm run build && npm publish",
+    "deploy": "npm run build && node deploy/copy.js && npm publish && npm run clean",
     "test": "jest --config jest.config.js",
     "lint": "eslint 'examples/**/*' 'lib/**/*' 'tests/**/*' --fix",
-    "clean": "rimraf dist",
+    "clean": "node deploy/clean.js",
     "bundlesize": "bundlesize"
   },
   "repository": {
@@ -33,11 +33,6 @@
     "url": "https://github.com/mohwa/emnida/issues",
     "email": "yanione2@gmail.com"
   },
-  "files": [
-    "dist",
-    "index.js",
-    "README.md"
-  ],
   "homepage": "https://github.com/mohwa/emnida#readme",
   "devDependencies": {
     "@babel/core": "^7.6.2",
@@ -55,12 +50,13 @@
     "eslint-import-resolver-webpack": "^0.11.1",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-prettier": "^3.1.1",
+    "fs-extra": "^9.0.1",
+    "glob": "^7.1.6",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^3.0.8",
     "jest": "^26.4.2",
     "lint-staged": "^9.4.2",
     "prettier-eslint": "^9.0.0",
-    "rimraf": "^3.0.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.8.2"

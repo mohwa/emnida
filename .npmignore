@@ -1,0 +1,12 @@
+# folders
+dist
+deploy
+examples
+lib
+tests
+
+# files
+.*
+.eslintrc.js
+*.config.js
+package-lock.json

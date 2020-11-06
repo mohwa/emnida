@@ -1,4 +1,4 @@
-# emnida
+# emnida.js
 
 emnida library will be using when a type and a value compare in javascript
 
