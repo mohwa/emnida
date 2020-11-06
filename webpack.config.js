@@ -24,8 +24,6 @@ module.exports = {
   entry: {
     emnida: getEntryPath('index.js'),
     type: getEntryPath('type.js'),
-    ua: getEntryPath('ua.js'),
-    number: getEntryPath('number.js'),
     ...(isDevServer ? { index: examplePath } : {}),
   },
   output: {
@@ -36,7 +34,6 @@ module.exports = {
     libraryTarget: 'umd',
     globalObject: 'this',
   },
-  devtool: isDev ? '' : 'source-map',
   resolve: {
     modules: ['src', 'node_modules'],
     extensions: ['.js'],
