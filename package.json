@@ -10,7 +10,8 @@
     "equal",
     "ua",
     "os",
-    "number"
+    "number",
+    "compare"
   ],
   "main": "emnida.js",
   "scripts": {
