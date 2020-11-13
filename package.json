@@ -77,7 +77,11 @@
     }
   },
   "lint-staged": {
-    "!(docs/**/*).{js, md, json}": [
+    "!(docs/**/*).{md, json}": [
+      "prettier --write",
+      "git add"
+    ],
+    "!(docs/**/*).{js}": [
       "npm run doc",
       "eslint --fix",
       "git add"
