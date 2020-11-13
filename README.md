@@ -2,6 +2,8 @@
 
 `emnida` library will be used to check when any situation like a data type or value check in the javascript.
 
+[API Documentation](http://mohwa.github.io/emnida)
+
 # Install
 
 ```javascript
