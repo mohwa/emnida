@@ -1,10 +1,82 @@
 import { isEqual, isEqualAtStringFunction, isEqualAtStringSymbol } from '../lib';
-import { isFunction } from '../lib/type';
+import {
+  isFunction,
+  isNumber,
+  isString,
+  isArray,
+  isArrayLikeObject,
+  isBoolean,
+  isDate,
+  isElement,
+  isEmpty,
+  isIterableObject,
+  isMap,
+  isNull,
+  isPlainObject,
+  isPrimitive,
+  isRegExp,
+  isSet,
+  isSymbol,
+  isUndefined,
+  isWeakMap,
+  isWeakSet,
+} from '../lib/type';
 import { getGlobalObject } from '../lib/_utils';
 
 const globalObject = getGlobalObject();
 
-console.log('PRIMITIVE');
+console.log('TYPE');
+
+console.log(isString('test')); // true
+console.log(isNumber(1)); // true
+console.log(isBoolean(true)); // true
+console.log(isUndefined(undefined)); // true
+console.log(isNull(null)); // true
+
+if (isFunction(globalObject?.Symbol)) {
+  console.log(isSymbol(Symbol(3))); // true
+  console.log(isIterableObject('')); // true
+  console.log(isIterableObject([])); // true
+}
+
+console.log(isFunction(function() {})); // true
+console.log(isArray([])); // true
+console.log(isArrayLikeObject([])); // true
+console.log(isDate(new Date())); // true
+
+if (globalObject?.document) {
+  console.log(isElement(document.documentElement)); // true
+}
+
+console.log(isPlainObject({})); // true
+
+if (isFunction(globalObject?.Map)) {
+  console.log(isIterableObject(new Map())); // true
+  console.log(isIterableObject(new Set())); // true
+
+  console.log(isMap(new Map())); // true
+  console.log(isSet(new Set())); // true
+
+  console.log(isWeakMap(new WeakMap())); // true
+  console.log(isWeakSet(new WeakSet())); // true
+}
+
+console.log(isPrimitive(1)); // true
+console.log(isRegExp(new RegExp('\\s+'))); // true
+
+console.log(isEmpty('')); // true
+console.log(isEmpty(undefined)); // true
+console.log(isEmpty(null)); // true
+console.log(isEmpty({})); // true
+console.log(isEmpty([])); // true
+console.log(isEmpty(1)); // false
+console.log(isEmpty(false)); // false
+
+if (isFunction(globalObject?.Symbol)) {
+  console.log(isEmpty(Symbol(3))); // false
+}
+
+console.log('isEqual');
 
 console.log(isEqual('1', '1'));
 console.log(isEqual(2, 2));
@@ -22,8 +94,6 @@ if (isFunction(globalObject?.Symbol)) {
   const symbol4 = Symbol(4);
   console.log(isEqual(symbol4, symbol4));
 }
-
-console.log('OBJECT');
 
 console.log(isEqual({ x: 2, y: 1 }, { y: 1, x: 2 }));
 console.log(isEqual({ x: 2, y: 1, z: '3' }, { x: 2, y: 1, z: '3' }));
@@ -74,8 +144,6 @@ console.log(
   )
 );
 
-console.log('CONSTRUCTOR');
-
 console.log(isEqual(new String(1), new String(1)));
 console.log(isEqual(new Number(1), new Number(1)));
 console.log(isEqual(new Boolean(true), new Boolean(true)));
@@ -97,8 +165,6 @@ if (isFunction(globalObject?.Map)) {
   m3.set('y', 2);
   m3.set('z', 3);
 
-  console.log('MAP');
-
   console.log(isEqual(new Map(), new Map()));
   console.log(isEqual(m1, m2));
 
@@ -118,7 +184,6 @@ if (isFunction(globalObject?.Map)) {
   s3.add(2);
   s3.add(33);
 
-  console.log('SET');
   console.log(isEqual(s1, s2));
   console.log(isEqual(s1, s3));
 }
@@ -128,7 +193,6 @@ if (isFunction(globalObject?.URL)) {
   const url2 = new URL('https://javascript.info/profile/admin');
   const url3 = new URL('https://javascript.info/profile/admin-1');
 
-  console.log('URL');
   console.log(isEqual(url1, url2));
   console.log(isEqual(url1, url3));
 }
