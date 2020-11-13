@@ -1,8 +1,10 @@
 # folders
 dist
 deploy
+docs
 examples
 lib
+scripts
 tests
 
 # files

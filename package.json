@@ -1,6 +1,6 @@
 {
   "name": "emnida",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This library will using for the check to some type on the javascript.",
   "keywords": [
     "emnida",
@@ -24,7 +24,8 @@
     "test": "jest --config jest.config.js",
     "lint": "eslint 'examples/**/*' 'lib/**/*' 'tests/**/*' --fix",
     "clean": "node deploy/clean.js",
-    "bundlesize": "bundlesize"
+    "bundlesize": "bundlesize",
+    "doc": "babel-node scripts/doc.js"
   },
   "repository": {
     "type": "git",
@@ -67,7 +68,8 @@
     "prettier-eslint": "^9.0.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.8.2"
+    "webpack-dev-server": "^3.8.2",
+    "documentation": "^13.1.0"
   },
   "husky": {
     "hooks": {
