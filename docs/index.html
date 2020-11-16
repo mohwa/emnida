@@ -29,9 +29,9 @@
               
                 
                 <li><a
-                  href='#isstring'
+                  href='#isequal'
                   class="">
-                  isString
+                  isEqual
                   
                 </a>
                 
@@ -39,11 +39,29 @@
               
                 
                 <li><a
-                  href='#isequal'
-                  class="">
-                  isEqual
-                  
+                  href='#type'
+                  class=" toggle-sibling">
+                  type
+                  <span class='icon'>▸</span>
                 </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  <ul class='list-reset py1-ul pl1'>
+                    <li class='h5'><span>Static members</span></li>
+                    
+                      <li><a
+                        href='#typeisstring'
+                        class='regular pre-open'>
+                        .isString
+                      </a></li>
+                    
+                    </ul>
+                  
+                  
+                  
+                  
+                </div>
                 
                 </li>
               
@@ -89,9 +107,9 @@
               
                 
                 <li><a
-                  href='#isnull'
+                  href='#isequalatstringsymbol'
                   class="">
-                  isNull
+                  isEqualAtStringSymbol
                   
                 </a>
                 
@@ -99,9 +117,9 @@
               
                 
                 <li><a
-                  href='#isequalatstringsymbol'
+                  href='#isnull'
                   class="">
-                  isEqualAtStringSymbol
+                  isNull
                   
                 </a>
                 
@@ -282,75 +300,6 @@
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='isstring'>
-      isString
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>Return a true when arguments is string type</p>
-
-    <div class='pre p1 fill-light mt0'>isString(v: any)</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>v</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'>isString(<span class="hljs-string">'test'</span>);</pre>
-    
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
     <h3 class='fl m0' id='isequal'>
       isEqual
     </h3>
@@ -410,6 +359,129 @@
       <pre class='p1 overflow-auto round fill-light'>isEqual(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>);</pre>
     
   
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='type'>
+      type
+    </h3>
+    
+    
+  </div>
+  
+
+  
+    <div class='pre p1 fill-light mt0'>type</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Static Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='typeisstring'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>isString(v)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Return a true when arguments is string type</p>
+
+    <div class='pre p1 fill-light mt0'>isString(v: any)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>v</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>isString(<span class="hljs-string">'test'</span>);</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
 
   
 
@@ -712,75 +784,6 @@
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='isnull'>
-      isNull
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>Return a true when arguments is null type</p>
-
-    <div class='pre p1 fill-light mt0'>isNull(v: any)</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>v</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'>isNull(<span class="hljs-literal">null</span>);</pre>
-    
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
     <h3 class='fl m0' id='isequalatstringsymbol'>
       isEqualAtStringSymbol
     </h3>
@@ -838,6 +841,75 @@
     
       
       <pre class='p1 overflow-auto round fill-light'>isEqualAtStringSymbol(<span class="hljs-built_in">Symbol</span>(<span class="hljs-number">1</span>), <span class="hljs-built_in">Symbol</span>(<span class="hljs-number">1</span>));</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='isnull'>
+      isNull
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Return a true when arguments is null type</p>
+
+    <div class='pre p1 fill-light mt0'>isNull(v: any)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>v</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>isNull(<span class="hljs-literal">null</span>);</pre>
     
   
 
