@@ -30,11 +30,15 @@ describe('isEmpty', () => {
     expect(result).toEqual(true);
   });
 
-  it('should be return false if string type', () => {
+  it('should be return true or false if string type', () => {
     // Given / When
-    const result = isEmpty('test');
+    const result1 = isEmpty('test');
+    const result2 = isEmpty('');
+    const result3 = isEmpty('  ');
     // Then
-    expect(result).toEqual(false);
+    expect(result1).toEqual(false);
+    expect(result2).toEqual(true);
+    expect(result3).toEqual(false);
   });
 
   it('should be return false if number type', () => {
