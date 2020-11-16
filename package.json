@@ -25,7 +25,7 @@
     "lint": "eslint 'examples/**/*' 'lib/**/*' 'tests/**/*' --fix",
     "clean": "node deploy/clean.js",
     "bundlesize": "bundlesize",
-    "doc": "babel-node scripts/doc.js"
+    "doc": "babel-node scripts/doc.js && git add"
   },
   "repository": {
     "type": "git",
@@ -73,12 +73,11 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && npm run doc"
     }
   },
   "lint-staged": {
     "!(docs/**/*).{js, md, json}": [
-      "npm run doc",
       "eslint --fix",
       "git add"
     ]
