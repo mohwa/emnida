@@ -21,11 +21,24 @@ import {
   isWeakMap,
   isWeakSet,
 } from '../lib/type';
+import {
+  isInteger,
+  isZero,
+  isLessOrEqual,
+  isGreaterOrEqual,
+  isGreater,
+  isNaN,
+  isInfinite,
+  isFinite,
+  isFloat,
+  isLess,
+} from '../lib/number';
+
 import { getGlobalObject } from '../lib/_utils';
 
 const globalObject = getGlobalObject();
 
-console.log('TYPE');
+console.log('Type');
 
 console.log(isString('test')); // true
 console.log(isNumber(1)); // true
@@ -75,6 +88,30 @@ console.log(isEmpty(false)); // false
 if (isFunction(globalObject?.Symbol)) {
   console.log(isEmpty(Symbol(3))); // false
 }
+
+console.log('Number');
+
+console.log(isInteger(1));
+console.log(isInteger(0.1));
+
+console.log(isZero(0));
+
+console.log(isLess(1, 10));
+console.log(isLess(10, 1));
+console.log(isLessOrEqual(10, 10));
+console.log(isLessOrEqual(10, 12));
+
+console.log(isGreater(10, 1));
+console.log(isGreater(1, 10));
+console.log(isGreaterOrEqual(10, 10));
+console.log(isGreaterOrEqual(12, 10));
+
+console.log(isNaN(0 / 0));
+console.log(isInfinite(Infinity));
+console.log(isFinite(Infinity));
+
+console.log(isFloat(0.1));
+console.log(isFloat(1));
 
 console.log('isEqual');
 

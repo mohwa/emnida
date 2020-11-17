@@ -82,6 +82,50 @@ console.log(isEmpty(null)); // true
 console.log(isIterableObject([])); // true
 ```
 
+## Number Type API
+
+These apis will be able to evaluate an arguments in the multiple case of number type
+
+```javascript
+import {
+  isInteger,
+  isZero,
+  isLessOrEqual,
+  isGreaterOrEqual,
+  isGreater,
+  isNaN,
+  isInfinite,
+  isFinite,
+  isFloat,
+  isLess,
+} from 'emnida/number'; // You also can use the `emnida` string instead the `emnida/number` string
+
+isInteger(1); // true
+isInteger(0.1); // false
+
+isZero(0) // true
+
+isLess(1, 10); // true
+isLess(10, 1); // false
+
+isLessOrEqual(10, 10); // true
+isLessOrEqual(10, 12); // true
+
+isGreater(10, 1); // true
+isGreater(1, 10); // false
+
+isGreaterOrEqual(10, 10); // true
+isGreaterOrEqual(12, 10); // true
+
+isNaN(0 / 0); // true
+
+isInfinite(Infinity); // true
+isFinite(Infinity); // false
+
+isFloat(0.1); // true
+isFloat(1); // false
+```
+
 ## isEqual API
 
 This api will be able to used to compare two value like the code follows
