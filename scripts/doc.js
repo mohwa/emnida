@@ -3,7 +3,7 @@ import documentation from 'documentation';
 import streamArray from 'stream-array';
 import vfs from 'vinyl-fs';
 
-const filePaths = [path.resolve('lib/index.js'), path.resolve('lib/type.js')];
+const filePaths = [path.resolve('lib/index.js'), path.resolve('lib/type.js'), path.resolve('lib/number.js')];
 
 documentation.lint(filePaths, { shallow: true }).then(lintOutput => {
   if (lintOutput) {
