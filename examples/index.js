@@ -225,12 +225,3 @@ if (isFunction(globalObject?.Map)) {
   console.log(isEqual(s1, s2));
   console.log(isEqual(s1, s3));
 }
-
-if (isFunction(globalObject?.URL)) {
-  const url1 = new URL('https://javascript.info/profile/admin');
-  const url2 = new URL('https://javascript.info/profile/admin');
-  const url3 = new URL('https://javascript.info/profile/admin-1');
-
-  console.log(isEqual(url1, url2));
-  console.log(isEqual(url1, url3));
-}

@@ -216,14 +216,6 @@ set3.add(33);
 
 console.log(isEqual(set1, set2)); // true
 console.log(isEqual(set1, set3)); // false
-
-// URL type examples
-const url1 = new URL('https://javascript.info/profile/admin');
-const url2 = new URL('https://javascript.info/profile/admin');
-const url3 = new URL('https://javascript.info/profile/admin-1');
-
-console.log(isEqual(url1, url2)); // true
-console.log(isEqual(url1, url3)); // false
 ```
 
 ## isEqualAtStringFunction or isEqualAtStringSymbol API

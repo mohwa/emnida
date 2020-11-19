@@ -33,7 +33,7 @@ describe('isEqual', () => {
     expect(result1).toEqual(true);
     expect(result2).toEqual(true);
     expect(result3).toEqual(true);
-    expect(result4).toEqual(true);
+    expect(result4).toEqual(false);
   });
 
   it('should be return false when comparing complex an objects', () => {
@@ -139,19 +139,6 @@ describe('isEqual', () => {
     // When
     const result1 = isEqual(s1, s2);
     const result2 = isEqual(s1, s3);
-    // Then
-    expect(result1).toEqual(true);
-    expect(result2).toEqual(false);
-  });
-
-  it('should be return true or false if URL type', () => {
-    // Given
-    const url1 = new URL('https://javascript.info/profile/admin');
-    const url2 = new URL('https://javascript.info/profile/admin');
-    const url3 = new URL('https://javascript.info/profile/admin-1');
-    // When
-    const result1 = isEqual(url1, url2);
-    const result2 = isEqual(url1, url3);
     // Then
     expect(result1).toEqual(true);
     expect(result2).toEqual(false);
