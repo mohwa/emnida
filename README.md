@@ -19,7 +19,9 @@ IE9 later, All modern browsers(Chrome, Safari, Edge ...), NodeJS(`10.0.0` versio
 These apis will be able to used to check normal data type like the code follows.
 
 ```javascript
-import {
+import { type } from 'emnida';
+
+const {
   isString,
   isArray,
   isBigInt,
@@ -36,7 +38,7 @@ import {
   isUndefined,
   isWeakMap,
   isWeakSet,
-} from 'emnida/type'; // You also can use the `emnida` string instead the `emnida/type` string
+} = type;
 
 console.log(isString('test')); // true
 console.log(isNumber(1)); // true
@@ -65,7 +67,9 @@ console.log(isRegExp(new RegExp('\\s+'))); // true
 These apis will be able to use in the special cases like the DOM element or empty value check.
 
 ```javascript
-import { isArrayLikeObject, isElement, isEmpty, isIterableObject, isPrimitive } from 'emnida/type';
+import { type } from 'emnida';
+
+const { isArrayLikeObject, isElement, isEmpty, isIterableObject, isPrimitive } = type;
 
 console.log(isPrimitive('test')); // true
 console.log(isPrimitive(1)); // true
@@ -87,7 +91,9 @@ console.log(isIterableObject([])); // true
 These apis will be able to evaluate an arguments in the multiple case of number type
 
 ```javascript
-import {
+import { number } from 'emnida';
+
+const {
   isInteger,
   isZero,
   isLessOrEqual,
@@ -98,7 +104,7 @@ import {
   isFinite,
   isFloat,
   isLess,
-} from 'emnida/number'; // You also can use the `emnida` string instead the `emnida/number` string
+} = number;
 
 isInteger(1); // true
 isInteger(0.1); // false
@@ -223,6 +229,8 @@ console.log(isEqual(set1, set3)); // false
 Below code will be evaluated to a `false` by the javascript mechanism, but you may will be able to turn to a true via use those `apis` to use. 
 
 ```javascript
+import { isEqual, isEqualAtStringFunction, isEqualAtStringSymbol } from 'emnida';
+
 isEqual(() => {}, () => {}); // false
 isEqual(Symbol(3), Symbol(3)); // false
 
