@@ -20,7 +20,7 @@
     "start": "npm run clean && cross-env PHASE=DEV ACTION=DEV_SERVER webpack-dev-server",
     "start:node": "babel-node ./examples",
     "build": "npm run clean && cross-env PHASE=DEV ACTION=BUILD npm run webpack && cross-env PHASE=PUBLISH ACTION=BUILD npm run webpack",
-    "deploy": "npm run build && npm publish && npm run clean",
+    "deploy": "npm run lint && npm run test && npm run build && npm publish && npm run clean",
     "test": "jest --config jest.config.js",
     "lint": "eslint 'examples/**/*' 'lib/**/*' 'tests/**/*' --fix",
     "clean": "rimraf dist",
@@ -78,7 +78,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && npm run doc"
+      "pre-commit": "lint-staged && npm run test && npm run doc"
     }
   },
   "lint-staged": {
