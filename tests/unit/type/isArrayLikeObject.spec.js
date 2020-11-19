@@ -2,9 +2,9 @@
 import { isArrayLikeObject } from '../../../lib/type';
 
 describe('isArrayLikeObject', () => {
-  it('should be return true if like array type', () => {
+  it('should be return true if array has some element', () => {
     // Given / When
-    const result = isArrayLikeObject([]);
+    const result = isArrayLikeObject([1]);
     // Then
     expect(result).toEqual(true);
   });
@@ -16,9 +16,11 @@ describe('isArrayLikeObject', () => {
     expect(result).toEqual(true);
   });
 
-  it('should be return false if function object', () => {
+  it('should be return true if function has parameters', () => {
     // Given / When
-    const result = isArrayLikeObject(() => {});
+    const result = isArrayLikeObject(function(x, y) {
+      console.log(x, y);
+    });
     // Then
     expect(result).toEqual(true);
   });
