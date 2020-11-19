@@ -78,7 +78,7 @@ console.log(isPrimitive(1)); // true
 console.log(isRegExp(new RegExp('\\s+'))); // true
 
 console.log(isEmpty('')); // true
-console.log(isEmpty(' ')); // true
+console.log(isEmpty(' ')); // false
 console.log(isEmpty(undefined)); // true
 console.log(isEmpty(null)); // true
 console.log(isEmpty({})); // true
