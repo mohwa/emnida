@@ -23,7 +23,6 @@ module.exports = {
   mode,
   entry: {
     emnida: getEntryPath('index.js'),
-    type: getEntryPath('type.js'),
     ...(isDevServer ? { index: examplePath } : {}),
   },
   output: {
@@ -46,6 +45,11 @@ module.exports = {
         include: [libPath, examplePath],
       },
     ],
+  },
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
   },
   plugins: [...(isDevServer ? [new HtmlWebPackPlugin({ filename: 'index.html' })] : [])],
   devServer: {
