@@ -1,7 +1,7 @@
 // eslint-disable-next-line
 import { isBigInt } from '../../../lib/type';
 
-describe('isSymbol', () => {
+describe('isBigInt', () => {
   it('should be return true if bigint type', () => {
     // Given / When
     const result = isBigInt(10n);

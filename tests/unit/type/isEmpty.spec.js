@@ -32,12 +32,12 @@ describe('isEmpty', () => {
 
   it('should be return true or false if string type', () => {
     // Given / When
-    const result1 = isEmpty('test');
-    const result2 = isEmpty('');
+    const result1 = isEmpty('');
+    const result2 = isEmpty('test');
     const result3 = isEmpty('  ');
     // Then
-    expect(result1).toEqual(false);
-    expect(result2).toEqual(true);
+    expect(result1).toEqual(true);
+    expect(result2).toEqual(false);
     expect(result3).toEqual(false);
   });
 
@@ -45,21 +45,28 @@ describe('isEmpty', () => {
     // Given / When
     const result = isEmpty(0);
     // Then
-    expect(result).toEqual(false);
+    expect(result).toEqual(true);
   });
 
   it('should be return false if boolean type', () => {
     // Given / When
     const result = isEmpty(true);
     // Then
-    expect(result).toEqual(false);
+    expect(result).toEqual(true);
   });
 
   it('should be return false if symbol type', () => {
     // Given / When
     const result = isEmpty(Symbol(1));
     // Then
-    expect(result).toEqual(false);
+    expect(result).toEqual(true);
+  });
+
+  it('should be return false if bigint type', () => {
+    // Given / When
+    const result = isEmpty(10n);
+    // Then
+    expect(result).toEqual(true);
   });
 
   it('should be return false if array has some element', () => {
@@ -69,7 +76,7 @@ describe('isEmpty', () => {
     expect(result).toEqual(false);
   });
 
-  it('should be return false if object has some property', () => {
+  it('should be return false if object has some key and value', () => {
     // Given / When
     const result = isEmpty({ x: 1 });
     // Then

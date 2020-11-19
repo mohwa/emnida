@@ -1,7 +1,7 @@
 // eslint-disable-next-line
 import { isArrayLikeObject } from '../../../lib/type';
 
-describe('isSymbol', () => {
+describe('isArrayLikeObject', () => {
   it('should be return true if like array type', () => {
     // Given / When
     const result = isArrayLikeObject([]);
@@ -27,14 +27,14 @@ describe('isSymbol', () => {
     // Given / When
     const result = isArrayLikeObject(new Map());
     // Then
-    expect(result).toEqual(true);
+    expect(result).toEqual(false);
   });
 
   it('should be return true if Set object', () => {
     // Given / When
     const result = isArrayLikeObject(new Set());
     // Then
-    expect(result).toEqual(true);
+    expect(result).toEqual(false);
   });
 
   it('should be return false if number type', () => {

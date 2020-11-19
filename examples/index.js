@@ -78,15 +78,16 @@ console.log(isPrimitive(1)); // true
 console.log(isRegExp(new RegExp('\\s+'))); // true
 
 console.log(isEmpty('')); // true
+console.log(isEmpty(' ')); // true
 console.log(isEmpty(undefined)); // true
 console.log(isEmpty(null)); // true
 console.log(isEmpty({})); // true
 console.log(isEmpty([])); // true
-console.log(isEmpty(1)); // false
-console.log(isEmpty(false)); // false
+console.log(isEmpty(1)); // true
+console.log(isEmpty(false)); // true
 
 if (isFunction(globalObject?.Symbol)) {
-  console.log(isEmpty(Symbol(3))); // false
+  console.log(isEmpty(Symbol(3))); // true
 }
 
 console.log('Number');
