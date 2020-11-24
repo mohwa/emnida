@@ -36,6 +36,7 @@ module.exports = {
   resolve: {
     modules: ['src', 'node_modules'],
     extensions: ['.js'],
+    fallback: { os: false },
   },
   module: {
     rules: [
