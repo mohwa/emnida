@@ -25,7 +25,6 @@
     "test": "jest --config jest.config.js",
     "lint": "eslint 'examples/**/*' 'lib/**/*' 'tests/**/*' --fix",
     "clean": "rimraf dist",
-    "bundlesize": "bundlesize",
     "doc": "babel-node scripts/doc.js"
   },
   "repository": {
@@ -81,7 +80,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && npm run test"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
