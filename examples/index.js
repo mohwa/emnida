@@ -1,4 +1,4 @@
-import { isEqual, isEqualAtStringFunction, isEqualAtStringSymbol } from '../lib';
+import { isEqual, isEqualAtStringFunction, isEqualAtStringSymbol } from '../lib/index';
 import {
   isFunction,
   isNumber,
