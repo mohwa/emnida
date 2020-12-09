@@ -1,5 +1,4 @@
 import { uglify } from 'rollup-plugin-uglify';
-// eslint-disable-next-line import/no-unresolved
 import { terser } from 'rollup-plugin-terser';
 import pkg from '../package.json';
 import { OUTPUT_PATH, mergeEntryConfig } from './utils';
@@ -24,7 +23,7 @@ export default [
   }),
   mergeEntryConfig({
     output: {
-      file: `${OUTPUT_PATH}/${pkg.name}.umd.min.js`,
+      file: `${OUTPUT_PATH}/${pkg.name}.min.js`,
       format: 'umd',
       exports: 'named',
       name: pkg.name,

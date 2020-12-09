@@ -1,7 +1,5 @@
 import babel from 'rollup-plugin-babel';
-// eslint-disable-next-line import/no-unresolved
-import { nodeResolve } from '@rollup/plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
+// import { nodeResolve } from '@rollup/plugin-node-resolve';
 
 export const OUTPUT_PATH = 'dist';
 
@@ -15,17 +13,14 @@ export function mergeEntryConfig(options = {}) {
   return {
     input: 'lib/index.js',
     output: {
-      interop: true,
+      freeze: false,
+      interop: false,
       sourcemap: true,
       ...output,
     },
     plugins: [
       babel({ exclude: 'node_modules/**' }),
-      nodeResolve(),
-      commonjs({
-        include: 'node_modules/**',
-        sourceMap: true,
-      }),
+      // nodeResolve(),
       ...plugins,
     ],
     ...options,
