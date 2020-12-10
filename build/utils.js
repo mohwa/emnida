@@ -1,5 +1,5 @@
 import babel from 'rollup-plugin-babel';
-// import { nodeResolve } from '@rollup/plugin-node-resolve';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
 
 export const OUTPUT_PATH = 'dist';
 
@@ -18,11 +18,7 @@ export function mergeEntryConfig(options = {}) {
       sourcemap: true,
       ...output,
     },
-    plugins: [
-      babel({ exclude: 'node_modules/**' }),
-      // nodeResolve(),
-      ...plugins,
-    ],
+    plugins: [babel({ exclude: 'node_modules/**' }), nodeResolve(), ...plugins],
     ...options,
   };
 }

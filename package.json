@@ -15,7 +15,6 @@
   ],
   "module": "dist/emnida.esm.js",
   "main": "dist/emnida.js",
-  "es2015": "dist/emnida.esm.js",
   "sideEffects": false,
   "scripts": {
     "start": "npm run clean && rollup -c ./build/rollup.config.test.js -w",
@@ -97,5 +96,8 @@
     "> 1%",
     "last 2 version",
     "not ie <= 8"
-  ]
+  ],
+  "dependencies": {
+    "array-organizer": "^0.1.8"
+  }
 }
