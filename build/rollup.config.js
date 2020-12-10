@@ -7,7 +7,7 @@ export default [
   mergeEntryConfig({
     output: {
       file: pkg.module,
-      format: 'es',
+      format: 'esm',
       exports: 'named',
       plugins: [terser()],
     },
