@@ -1,5 +1,7 @@
 # emnida
 
+![npm](https://img.shields.io/npm/v/emnida) [![](https://data.jsdelivr.com/v1/package/npm/emnida/badge)](https://www.jsdelivr.com/package/npm/emnida) ![npm bundle size](https://img.shields.io/bundlephobia/min/emnida) ![npm](https://img.shields.io/npm/dm/emnida) ![NPM](https://img.shields.io/npm/l/emnida)
+
 `emnida` library will be used to check when any situation like a data type or value check in the javascript.
 
 [API Documentation](http://mohwa.github.io/emnida)
