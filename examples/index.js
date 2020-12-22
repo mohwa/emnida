@@ -20,6 +20,7 @@ import {
   isUndefined,
   isWeakMap,
   isWeakSet,
+  isObject,
 } from '../lib/type';
 import {
   isInteger,
@@ -225,3 +226,7 @@ if (isFunction(globalObject?.Map)) {
   console.log(isEqual(s1, s2));
   console.log(isEqual(s1, s3));
 }
+
+console.log(isObject([]));
+console.log(isObject({}));
+console.log(isObject(() => {}));
