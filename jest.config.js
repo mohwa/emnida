@@ -7,7 +7,4 @@ module.exports = {
     '^.+\\.(js|jsx)?$': 'babel-jest',
   },
   transformIgnorePatterns: ['<rootDir>/node_modules/'],
-  collectCoverage: true,
-  collectCoverageFrom: ['src/**/*.js', '!**/node_modules/**'],
-  coverageDirectory: '<rootDir>/tests/coverage',
 };
