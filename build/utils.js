@@ -1,7 +1,9 @@
+import path from 'path';
 import babel from 'rollup-plugin-babel';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 
 export const OUTPUT_PATH = 'dist';
+export const BABEL_FILE_PATH = path.resolve(__dirname, '../babel/.babelrc');
 
 export function mergeEntryConfig(options = {}) {
   const plugins = options.plugins || [];
@@ -18,7 +20,14 @@ export function mergeEntryConfig(options = {}) {
       sourcemap: true,
       ...output,
     },
-    plugins: [babel({ exclude: 'node_modules/**' }), nodeResolve(), ...plugins],
+    plugins: [
+      babel({
+        exclude: 'node_modules/**',
+        configFile: BABEL_FILE_PATH,
+      }),
+      nodeResolve(),
+      ...plugins,
+    ],
     ...options,
   };
 }
