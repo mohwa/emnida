@@ -40,6 +40,7 @@ const {
   isUndefined,
   isWeakMap,
   isWeakSet,
+  isObject,
 } = type;
 
 console.log(isString('test')); // true
@@ -62,6 +63,8 @@ console.log(isWeakSet(new WeakSet())); // true
 
 console.log(isDate(new Date())); // true
 console.log(isRegExp(new RegExp('\\s+'))); // true
+
+console.log(isObject([])); // true
 ```
 
 ## Special Type API
