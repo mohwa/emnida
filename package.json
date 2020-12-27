@@ -20,13 +20,13 @@
   "sideEffects": false,
   "scripts": {
     "start": "npm run clean && rollup -c ./build/rollup.config.test.js -w",
-    "start:node": "babel-node ./examples",
+    "start:node": "babel-node --config-file ./babel/.babelrc ./examples",
     "build": "npm run clean && rollup -c ./build/rollup.config.js",
     "deploy": "npm run lint && npm run test && npm run build && npm run doc && npm publish && npm run clean",
     "test": "jest --config jest.config.js",
     "lint": "eslint 'examples/**/*' 'lib/**/*' 'tests/**/*' --fix",
     "clean": "rimraf dist",
-    "doc": "babel-node scripts/doc.js"
+    "doc": "babel-node --config-file ./babel/.babelrc scripts/doc.js"
   },
   "repository": {
     "type": "git",
