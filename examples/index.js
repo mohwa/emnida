@@ -21,6 +21,9 @@ import {
   isWeakMap,
   isWeakSet,
   isObject,
+  isJSONPlainObject,
+  isJSONArray,
+  isJSONObject,
 } from '../lib/type';
 import {
   isInteger,
@@ -230,3 +233,8 @@ if (isFunction(globalObject?.Map)) {
 console.log(isObject([]));
 console.log(isObject({}));
 console.log(isObject(() => {}));
+
+console.log(isJSONPlainObject('{ "x": "1", "y": 1, "z": true, "xx": null, "yy": {}, "zz": [] }'));
+console.log(isJSONArray('["1", 1, true, null, {}, []]'));
+console.log(isJSONObject('{ "x": "1", "y": 1, "z": true, "xx": null, "yy": {}, "zz": [] }'));
+console.log(isJSONObject('["1", 1, true, null, {}, []]'));
