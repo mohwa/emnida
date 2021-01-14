@@ -81,7 +81,6 @@ describe('isObject', () => {
 
   it('should be return true if generator iterable object', () => {
     // Given / When
-    console.log(typeof (function*() {})());
     const result = isObject((function*() {})());
     // Then
     expect(result).toEqual(true);
