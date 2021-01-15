@@ -1,4 +1,4 @@
-import { spawn } from 'child_process';
+import { spawn } from 'cross-spawn';
 import serve from 'rollup-plugin-serve';
 // import htmlTemplate from 'rollup-plugin-generate-html-template';
 import html from '@rollup/plugin-html';
