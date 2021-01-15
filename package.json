@@ -26,6 +26,7 @@
     "test": "npm run clean && cross-env IS_TEST=true rollup -c ./build/rollup.config.test.js",
     "unit": "babel-node ./node_modules/.bin/jest --config ./tests/unit/jest.config.js",
     "e2e": "babel-node ./node_modules/.bin/nightwatch --env chrome",
+    "e2e-ie11": "babel-node ./node_modules/.bin/nightwatch --env ie11",
     "lint": "eslint 'examples/**/*' 'lib/**/*' 'tests/**/*' --fix",
     "clean": "rimraf dist",
     "doc": "babel-node --config-file ./babel/.babelrc scripts/doc.js"
