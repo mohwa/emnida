@@ -23,7 +23,9 @@
     "start:node": "babel-node --config-file ./babel/.babelrc ./examples",
     "build": "npm run clean && rollup -c ./build/rollup.config.js",
     "deploy": "npm run lint && npm run test && npm run build && npm run doc && npm publish && npm run clean",
-    "test": "jest --config jest.config.js",
+    "test": "npm run clean && cross-env IS_TEST=true rollup -c ./build/rollup.config.test.js",
+    "unit": "babel-node ./node_modules/.bin/jest --config ./tests/unit/jest.config.js",
+    "e2e": "babel-node ./node_modules/.bin/nightwatch --env chrome",
     "lint": "eslint 'examples/**/*' 'lib/**/*' 'tests/**/*' --fix",
     "clean": "rimraf dist",
     "doc": "babel-node --config-file ./babel/.babelrc scripts/doc.js"
@@ -53,6 +55,8 @@
     "@babel/node": "^7.12.1",
     "@babel/plugin-proposal-optional-chaining": "^7.6.0",
     "@babel/preset-env": "^7.6.2",
+    "@babel/register": "^7.12.10",
+    "@jest/globals": "^26.6.2",
     "@rollup/plugin-html": "^0.2.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
     "array-organizer": "^1.0.10",
@@ -60,6 +64,7 @@
     "babel-jest": "^26.3.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-rewire": "^1.2.0",
+    "chromedriver": "^87.0.5",
     "cross-env": "^6.0.3",
     "documentation": "^13.1.0",
     "eslint": "^6.8.0",
@@ -67,18 +72,26 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-prettier": "^3.1.1",
     "fs-extra": "^9.0.1",
+    "geckodriver": "^1.21.1",
     "glob": "^7.1.6",
     "husky": "^3.0.8",
+    "iedriver": "^3.150.1",
     "jest": "^26.4.2",
     "lint-staged": "^9.4.2",
+    "mocha": "^8.2.1",
+    "nightwatch": "^1.5.1",
     "prettier-eslint": "^9.0.0",
     "rimraf": "^3.0.0",
     "rollup": "^2.34.2",
     "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-bundle-html": "^0.2.2",
     "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-generate-html-template": "^1.7.0",
+    "rollup-plugin-html2": "^2.0.0",
     "rollup-plugin-serve": "^1.1.0",
     "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-uglify": "^6.0.4"
+    "rollup-plugin-uglify": "^6.0.4",
+    "selenium-server": "^3.141.59"
   },
   "husky": {
     "hooks": {
@@ -99,5 +112,9 @@
     "> 1%",
     "last 2 version",
     "not ie <= 8"
-  ]
+  ],
+  "dependencies": {
+    "chai": "^4.2.0",
+    "expect.js": "^0.3.1"
+  }
 }

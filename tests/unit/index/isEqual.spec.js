@@ -1,5 +1,5 @@
 // eslint-disable-next-line
-import { isEqual } from '../../lib';
+import { isEqual } from '../../../lib';
 
 describe('isEqual', () => {
   it('should be return true when equal first argument and second argument of primitive type', () => {

@@ -1,5 +1,5 @@
 // eslint-disable-next-line
-import { isEqualAtStringSymbol } from '../../lib';
+import { isEqualAtStringSymbol } from '../../../lib';
 
 describe('isEqualAtStringSymbol', () => {
   it('should be return true or false when comparing symbol and symbol', () => {
