@@ -1,4 +1,4 @@
-const { assert } = require('chai');
+import { assert } from 'chai';
 
 describe('isUndefined', function() {
   it('should be return true if undefined type', (browser, done) => {
