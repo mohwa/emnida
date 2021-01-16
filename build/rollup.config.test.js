@@ -29,7 +29,9 @@ export default [
           onListening: () => {
             if (IS_TEST) {
               console.log('Start e2e test');
-              const e2e = spawn('npm', ['run', 'e2e'], { stdio: 'inherit' });
+              const e2e = spawn('npm', ['run', 'e2e-ie11'], { stdio: 'inherit' });
+
+              //console.log(e2e);
 
               e2e.on('close', code => {
                 console.log('Close e2e test', code);

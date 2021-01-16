@@ -1,11 +1,11 @@
-import { assert } from 'chai';
+const { assert } = require('chai');
 
 describe('isUndefined', function() {
   it('should be return true if undefined type', (browser, done) => {
     browser
       .url(browser.launch_url)
       .execute(
-        () => {
+        function() {
           return window.emnida.type.isUndefined(undefined);
         },
         [],

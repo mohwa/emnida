@@ -1,4 +1,4 @@
-module.exports = {
+﻿module.exports = {
   src_folders: ['tests/e2e'],
   output_folder: 'test/e2e/reports',
 
@@ -26,9 +26,9 @@ module.exports = {
       launch_url: 'http://localhost:9999',
       selenium_host: 'localhost',
       selenium_port: 4444,
-      globals: {
-        waitForConditionTimeout: 5000, // sometimes internet is slow so wait.
-      },
+      //globals: {
+      //waitForConditionTimeout: 5000, // sometimes internet is slow so wait.
+      //},
       desiredCapabilities: {
         javascriptEnabled: true,
         acceptSslCerts: true,
@@ -76,8 +76,8 @@ module.exports = {
       desiredCapabilities: {
         browserName: 'internet explorer',
         version: '11',
-        // allowBlockedContent: true,
-        // ignoreProtectedModeSettings: true,
+        //allowBlockedContent: true,
+        //ignoreProtectedModeSettings: true,
       },
     },
   },
