@@ -7,8 +7,8 @@
   // Selenium Server is running locally and is managed by Nightwatch
   selenium: {
     start_process: true,
-    host: '127.0.0.1',
-    port: 4444,
+    // host: '127.0.0.1',
+    // port: 4444,
     server_path: require('selenium-server').path,
     cli_args: {
       'webdriver.gecko.driver': require('geckodriver').path,
@@ -20,11 +20,8 @@
   test_settings: {
     default: {
       launch_url: 'http://localhost:9999',
-      selenium_host: 'localhost',
-      selenium_port: 4444,
-      //globals: {
-      //waitForConditionTimeout: 5000, // sometimes internet is slow so wait.
-      //},
+      // selenium_host: 'localhost',
+      // selenium_port: 4444,
       desiredCapabilities: {
         javascriptEnabled: true,
         acceptSslCerts: true,
@@ -45,7 +42,7 @@
         browserName: 'chrome',
         chromeOptions: {
           w3c: false,
-          args: ['headless', '--no-sandbox'],
+          args: ['headless', 'disable-gpu', 'disable-dev-shm-usage', 'no-sandbox'],
         },
       },
     },
