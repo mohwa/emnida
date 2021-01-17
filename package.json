@@ -19,8 +19,8 @@
   "main": "dist/emnida.js",
   "sideEffects": false,
   "scripts": {
-    "start": "npm run clean && rollup -c ./build/rollup.config.test.js -w",
-    "start:node": "babel-node --config-file ./babel/.babelrc ./examples",
+    "start": "npm run clean && rollup -c ./build/rollup.config.dev.js -w",
+    "start:node": "babel-node ./examples",
     "build": "npm run clean && rollup -c ./build/rollup.config.js",
     "deploy": "npm run lint && npm run unit && npm run build && npm run doc && npm publish && npm run clean",
     "unit": "babel-node ./node_modules/.bin/jest --config ./tests/unit/jest.config.js",
@@ -37,7 +37,7 @@
     "nw:ie11": "babel-node ./node_modules/nightwatch/bin/nightwatch --config ./tests/e2e/nightwatch.conf.js --env ie11",
     "lint": "eslint 'examples/**/*' 'lib/**/*' 'tests/**/*' --fix",
     "clean": "rimraf dist",
-    "doc": "babel-node --config-file ./babel/.babelrc scripts/doc.js"
+    "doc": "babel-node scripts/doc.js"
   },
   "repository": {
     "type": "git",
@@ -88,7 +88,6 @@
     "iedriver": "^3.150.1",
     "jest": "^26.4.2",
     "lint-staged": "^9.4.2",
-    "mocha": "^8.2.1",
     "nightwatch": "^1.5.1",
     "prettier-eslint": "^9.0.0",
     "rimraf": "^3.0.0",

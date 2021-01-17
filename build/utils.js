@@ -1,7 +1,12 @@
 import babel from 'rollup-plugin-babel';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 
+export const INPUT_PATH = 'lib';
 export const OUTPUT_PATH = 'dist';
+export const DEV_SERVER = {
+  HOST: 'localhost',
+  PORT: 9999,
+};
 
 export function mergeEntryConfig(options = {}) {
   const plugins = options.plugins || [];
@@ -11,7 +16,7 @@ export function mergeEntryConfig(options = {}) {
   delete options.output;
 
   return {
-    input: 'lib/index.js',
+    input: `${INPUT_PATH}/index.js`,
     output: {
       freeze: false,
       interop: false,
