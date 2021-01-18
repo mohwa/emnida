@@ -3,6 +3,7 @@
 module.exports = {
   src_folders: ['tests/e2e'],
   output_folder: 'tests/e2e/reports',
+  // custom_commands_path: ['tests/e2e/custom-commands'],
 
   test_runner: 'mocha',
 
@@ -20,18 +21,10 @@ module.exports = {
   test_settings: {
     default: {
       launch_url: `http://${DEV_SERVER.HOST}:${DEV_SERVER.PORT}`,
+      silent: true,
       desiredCapabilities: {
         javascriptEnabled: true,
         acceptSslCerts: true,
-      },
-    },
-
-    firefox: {
-      desiredCapabilities: {
-        browserName: 'firefox',
-        'moz:firefoxOptions': {
-          args: ['--headless'],
-        },
       },
     },
 
@@ -45,30 +38,27 @@ module.exports = {
       },
     },
 
-    ie9: {
+    safari: {
       desiredCapabilities: {
-        browserName: 'internet explorer',
-        version: '9',
-        // allowBlockedContent: true,
-        // ignoreProtectedModeSettings: true,
+        browserName: 'safari',
+        args: ['headless', 'disable-gpu', 'disable-dev-shm-usage', 'no-sandbox'],
       },
     },
 
-    ie10: {
+    firefox: {
       desiredCapabilities: {
-        browserName: 'internet explorer',
-        version: '10',
-        // allowBlockedContent: true,
-        // ignoreProtectedModeSettings: true,
+        browserName: 'firefox',
+        'moz:firefoxOptions': {
+          args: ['--headless'],
+        },
       },
     },
 
-    ie11: {
+    ie: {
       desiredCapabilities: {
         browserName: 'internet explorer',
-        version: '11',
-        //allowBlockedContent: true,
-        //ignoreProtectedModeSettings: true,
+        // https://github.com/SeleniumHQ/selenium/wiki/DesiredCapabilities#safari-specific
+        ignoreProtectedModeSettings: true,
       },
     },
   },
