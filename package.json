@@ -32,7 +32,8 @@
     "nw:chrome": "babel-node ./node_modules/.bin/nightwatch --config ./tests/e2e/nightwatch.conf.js --env chrome",
     "nw:safari": "babel-node ./node_modules/.bin/nightwatch --config ./tests/e2e/nightwatch.conf.js --env safari",
     "nw:firefox": "babel-node ./node_modules/.bin/nightwatch --config ./tests/e2e/nightwatch.conf.js --env firefox",
-    "nw:ie": "babel-node ./node_modules/nightwatch/bin/nightwatch --config ./tests/e2e/nightwatch.conf.js --env ie",
+    "nw:ie11": "babel-node ./node_modules/nightwatch/bin/nightwatch --config ./tests/e2e/nightwatch.conf.js --env ie11",
+    "nw:edge": "babel-node ./node_modules/nightwatch/bin/nightwatch --config ./tests/e2e/nightwatch.conf.js --env edge",
     "lint": "eslint 'examples/**/*' 'lib/**/*' 'tests/**/*' --fix",
     "clean": "rimraf dist",
     "doc": "babel-node scripts/doc.js"
