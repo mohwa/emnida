@@ -25,7 +25,7 @@ describe('isEqual', function() {
         };
 
         try {
-          const symbol = Symbol(3);
+          const symbol = window.Symbol(3);
 
           return Object.assign(results, {
             result6: isEqual(symbol, symbol),
