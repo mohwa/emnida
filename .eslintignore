@@ -1,4 +1,4 @@
 dist
 docs
 node_modules
-tests/e2e
+tests/e2e/*.conf.js
