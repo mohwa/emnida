@@ -24,15 +24,15 @@ describe('isEqual', function() {
           result5: isEqual(null, null),
         };
 
-        if (!window.Symbol) {
-          return results;
-        } else {
+        try {
           const symbol = Symbol(3);
 
           return Object.assign(results, {
             result6: isEqual(symbol, symbol),
             result7: isEqual(10n, 10n),
           });
+        } catch (e) {
+          return results;
         }
       },
       [],
