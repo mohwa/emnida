@@ -36,4 +36,10 @@ module.exports = {
     ],
     'import/newline-after-import': 'error',
   },
+  globals: {
+    before: true,
+    after: true,
+    beforeEach: true,
+    afterEach: true,
+  },
 };

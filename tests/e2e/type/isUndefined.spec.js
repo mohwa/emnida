@@ -1,12 +1,10 @@
 import { assert } from 'chai';
 
 describe('isUndefined', function() {
-  // eslint-disable-next-line no-undef
   before((browser, done) => {
     browser.url(browser.launch_url, () => done());
   });
 
-  // eslint-disable-next-line no-undef
   after((browser, done) => {
     browser.end(() => done());
   });
