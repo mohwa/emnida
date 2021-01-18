@@ -41,5 +41,6 @@ module.exports = {
     after: true,
     beforeEach: true,
     afterEach: true,
+    emnida: true,
   },
 };
