@@ -54,7 +54,16 @@ module.exports = {
       },
     },
 
-    ie: {
+    ie11: {
+      desiredCapabilities: {
+        browserName: 'internet explorer',
+        version: '11',
+        // https://github.com/SeleniumHQ/selenium/wiki/DesiredCapabilities#safari-specific
+        ignoreProtectedModeSettings: true,
+      },
+    },
+
+    edge: {
       desiredCapabilities: {
         browserName: 'internet explorer',
         // https://github.com/SeleniumHQ/selenium/wiki/DesiredCapabilities#safari-specific

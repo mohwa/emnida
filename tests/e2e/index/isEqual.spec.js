@@ -14,9 +14,9 @@ describe('isEqual', function() {
     browser.execute(
       function() {
         // Given / When
-        const isEqual = emnida.isEqual;
+        var isEqual = emnida.isEqual;
 
-        const results = {
+        var results = {
           result1: isEqual('1', '1'),
           result2: isEqual(2, 2),
           result3: isEqual(true, true),
@@ -25,7 +25,7 @@ describe('isEqual', function() {
         };
 
         if (window.Symbol) {
-          const symbol = Symbol(3);
+          var symbol = Symbol(3);
 
           return Object.assign(results, {
             result6: isEqual(symbol, symbol),
