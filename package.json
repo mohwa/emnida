@@ -64,7 +64,6 @@
     "@babel/node": "^7.12.1",
     "@babel/plugin-proposal-optional-chaining": "^7.6.0",
     "@babel/preset-env": "^7.6.2",
-    "@jest/globals": "^26.6.2",
     "@rollup/plugin-html": "^0.2.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
     "array-organizer": "^1.0.12",
