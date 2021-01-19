@@ -73,8 +73,13 @@ if (isFunction(globalObject?.Map)) {
 
   console.log(isMap(new Map())); // true
   console.log(isSet(new Set())); // true
+}
 
+if (isFunction(globalObject?.WeakMap)) {
   console.log(isWeakMap(new WeakMap())); // true
+}
+
+if (isFunction(globalObject?.WeakSet)) {
   console.log(isWeakSet(new WeakSet())); // true
 }
 

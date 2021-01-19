@@ -177,35 +177,20 @@ describe('isEqual', function() {
       function() {
         // Given / When
         const isEqual = emnida.isEqual;
-        let results = {
-          result1: true,
-          result2: true,
-          result3: false,
-          result4: false,
+
+        const m1 = new Map();
+        m1.set('x', 1);
+        m1.set('y', 2);
+
+        const m2 = new Map();
+        m2.set('x', 1);
+        m2.set('y', 2);
+        m2.set('z', 3);
+
+        return {
+          result1: isEqual(new Map(), new Map()),
+          result2: isEqual(m1, m2),
         };
-
-        if (window.Map) {
-          const m1 = new Map();
-          m1.set('x', 1);
-          m1.set('y', 2);
-
-          const m2 = new Map();
-          m2.set('x', 1);
-          m2.set('y', 2);
-
-          const m3 = new Map();
-          m3.set('x', 1);
-          m3.set('y', 2);
-          m3.set('z', 3);
-
-          results = {
-            result1: isEqual(new Map(), new Map()),
-            result2: isEqual(m1, m3),
-            result3: isEqual(m2, m3),
-          };
-        }
-
-        return results;
       },
       [],
       function(ret) {
@@ -214,7 +199,6 @@ describe('isEqual', function() {
 
         assert.equal(v.result1, true);
         assert.equal(v.result2, false);
-        assert.equal(v.result3, false);
       }
     );
   });
@@ -224,34 +208,22 @@ describe('isEqual', function() {
       function() {
         // Given / When
         const isEqual = emnida.isEqual;
-        let results = {
-          result1: true,
-          result2: false,
-        };
 
-        if (window.Set) {
-          const s1 = new Set();
-          s1.add(1);
-          s1.add(2);
+        const s1 = new Set();
+        s1.add(1);
+        s1.add(2);
 
-          const s3 = new Set();
-          s3.add(1);
-          s3.add(2);
-          s3.add(33);
+        const s2 = new Set();
+        s2.add(1);
+        s2.add(2);
+        s2.add(33);
 
-          results = {
-            result1: isEqual(s1, s3),
-          };
-        }
-
-        return results;
+        return isEqual(s1, s2);
       },
       [],
       function(ret) {
         // Then
-        const v = ret.value;
-
-        assert.equal(v.result1, false);
+        assert.equal(ret.value, false);
       }
     );
   });
