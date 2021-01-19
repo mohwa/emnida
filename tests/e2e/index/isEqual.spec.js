@@ -3,7 +3,6 @@ import { assert } from 'chai';
 describe('isEqual', function() {
   before((browser, done) => {
     browser.url(browser.launch_url, () => done());
-    // browser.waitForElementVisible('body', 1000, () => done())
   });
 
   after((browser, done) => {
