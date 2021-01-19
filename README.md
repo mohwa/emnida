@@ -41,9 +41,9 @@ const {
   isWeakMap,
   isWeakSet,
   isObject,
-  isJSONPlainObject,
-  isJSONArray,
-  isJSONObject,
+  isJSONPlainObjectString,
+  isJSONArrayString,
+  isJSONObjectString,
 } = type;
 
 isString('test'); // true
@@ -69,11 +69,11 @@ isRegExp(new RegExp('\\s+')); // true
 
 isObject([]); // true
 
-isJSONPlainObject('{ "x": "1", "y": 1, "z": true, "xx": null, "yy": {}, "zz": [] }'); // true
-isJSONArray('["1", 1, true, null, {}, []]'); // true
+isJSONPlainObjectString('{ "x": "1", "y": 1, "z": true, "xx": null, "yy": {}, "zz": [] }'); // true
+isJSONArrayString('["1", 1, true, null, {}, []]'); // true
 
-isJSONObject('{ "x": "1", "y": 1, "z": true, "xx": null, "yy": {}, "zz": [] }'); // true
-isJSONObject('["1", 1, true, null, {}, []]'); // true
+isJSONObjectString('{ "x": "1", "y": 1, "z": true, "xx": null, "yy": {}, "zz": [] }'); // true
+isJSONObjectString('["1", 1, true, null, {}, []]'); // true
 ```
 
 ## Special Type API
