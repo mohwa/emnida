@@ -1,5 +1,5 @@
 // eslint-disable-next-line
-import { isEqualAtStringFunction } from '../../lib';
+import { isEqualAtStringFunction } from '../../../lib';
 
 describe('isEqualAtStringFunction', () => {
   it('should be return true or false when comparing function and function', () => {

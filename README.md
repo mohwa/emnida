@@ -41,6 +41,9 @@ const {
   isWeakMap,
   isWeakSet,
   isObject,
+  isJSONPlainObjectString,
+  isJSONArrayString,
+  isJSONObjectString,
 } = type;
 
 isString('test'); // true
@@ -65,6 +68,12 @@ isDate(new Date()); // true
 isRegExp(new RegExp('\\s+')); // true
 
 isObject([]); // true
+
+isJSONPlainObjectString('{ "x": "1", "y": 1, "z": true, "xx": null, "yy": {}, "zz": [] }'); // true
+isJSONArrayString('["1", 1, true, null, {}, []]'); // true
+
+isJSONObjectString('{ "x": "1", "y": 1, "z": true, "xx": null, "yy": {}, "zz": [] }'); // true
+isJSONObjectString('["1", 1, true, null, {}, []]'); // true
 ```
 
 ## Special Type API
@@ -76,13 +85,13 @@ import { type } from 'emnida';
 
 const { isArrayLikeObject, isElement, isEmpty, isIterableObject, isPrimitive } = type;
 
-console.log(isPrimitive('test')); // true
-console.log(isPrimitive(1)); // true
-console.log(isPrimitive(true)); // true
-console.log(isPrimitive(null)); // true
-console.log(isPrimitive(undefined)); // true
-console.log(isPrimitive(Symbol(1))); // true
-console.log(isPrimitive(10n)); // true
+isPrimitive('test'); // true
+isPrimitive(1); // true
+isPrimitive(true); // true
+isPrimitive(null); // true
+isPrimitive(undefined); // true
+isPrimitive(Symbol(1)); // true
+isPrimitive(10n); // true
 
 isElement(document.documentElement); // true
 isArrayLikeObject('test'); // true
@@ -203,11 +212,11 @@ map3.set('x', 1);
 map3.set('y', 2);
 map3.set('z', 3);
 
-console.log(isEqual(new Map(), new Map())); // true
-console.log(isEqual(map1, map2)); // true
+isEqual(new Map(), new Map()); // true
+isEqual(map1, map2); // true
 
-console.log(isEqual(map1, map3)); // false
-console.log(isEqual(map2, map3)); // false
+isEqual(map1, map3); // false
+isEqual(map2, map3); // false
 
 // SET type examples
 const set1 = new Set();
