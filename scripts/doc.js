@@ -8,7 +8,7 @@ import jsdoc2md from 'jsdoc-to-markdown';
 import fs from 'fs-extra';
 import markdownInclude from 'markdown-include';
 
-const files = ['lib/index.js', 'lib/type.js', 'lib/number.js'];
+const files = ['lib/type.js', 'lib/number.js', 'lib/index.js'];
 const md = jsdoc2md.renderSync({ files });
 
 fs.outputFileSync(path.resolve(__dirname, '../docTemplates/examples.md'), md);

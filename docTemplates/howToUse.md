@@ -1,32 +1,30 @@
-## Normal Type API
+## Type check apis
 
-These apis will be able to used to check normal data type like the code follows.
+These features will be use to check data type
 
 ```javascript
-import { type } from 'emnida';
-
-const {
-  isString,
-  isArray,
-  isBigInt,
-  isBoolean,
-  isDate,
-  isFunction,
-  isMap,
-  isNull,
-  isNumber,
-  isPlainObject,
-  isRegExp,
-  isSet,
-  isSymbol,
-  isUndefined,
-  isWeakMap,
-  isWeakSet,
-  isObject,
-  isJSONPlainObjectString,
-  isJSONArrayString,
-  isJSONObjectString,
-} = type;
+import {
+ isString,
+ isArray,
+ isBigInt,
+ isBoolean,
+ isDate,
+ isFunction,
+ isMap,
+ isNull,
+ isNumber,
+ isPlainObject,
+ isRegExp,
+ isSet,
+ isSymbol,
+ isUndefined,
+ isWeakMap,
+ isWeakSet,
+ isObject,
+ isJSONPlainObjectString,
+ isJSONArrayString,
+ isJSONObjectString,
+} from 'emnida';
 
 isString('test'); // true
 isNumber(1); // true
@@ -58,9 +56,9 @@ isJSONObjectString('{ "x": "1", "y": 1, "z": true, "xx": null, "yy": {}, "zz": [
 isJSONObjectString('["1", 1, true, null, {}, []]'); // true
 ```
 
-## Special Type API
+## Special Type check apis
 
-These apis will be able to use in the special cases like the DOM element or empty value check.
+These features will be use in special cases like the DOM element or empty value check
 
 ```javascript
 import { type } from 'emnida';
@@ -82,14 +80,12 @@ isEmpty(null); // true
 isIterableObject([]); // true
 ```
 
-## Number Type API
+## Number Type check apis
 
-These apis will be able to evaluate an arguments in the multiple case of number type
+These features will be evaluates an arguments in the various cases of number type
 
 ```javascript
-import { number } from 'emnida';
-
-const {
+import {
   isInteger,
   isZero,
   isLessOrEqual,
@@ -100,7 +96,7 @@ const {
   isFinite,
   isFloat,
   isLess,
-} = number;
+} from 'emnida';
 
 isInteger(1); // true
 isInteger(0.1); // false
@@ -128,9 +124,9 @@ isFloat(0.1); // true
 isFloat(1); // false
 ```
 
-## isEqual API
+## isEqual
 
-This api will be able to used to compare two value like the code follows
+This feature will be use to compare two arguments like the code follows
 
 ```javascript
 import { isEqual } from 'emnida';
@@ -218,9 +214,9 @@ isEqual(set1, set2); // true
 isEqual(set1, set3); // false
 ```
 
-## isEqualAtStringFunction or isEqualAtStringSymbol API
+## isEqualAtStringFunction or isEqualAtStringSymbol
 
-Below code will be evaluated to a `false` by the javascript mechanism, but you may will be able to turn to a true via use those `apis` to use. 
+Below code will be evaluated to a `false` by the javascript mechanism, but you may will be able to turn to a `true` via use these features to use. 
 
 ```javascript
 import { isEqual, isEqualAtStringFunction, isEqualAtStringSymbol } from 'emnida';
