@@ -1,4 +1,4 @@
-## Type check apis
+### Type check apis
 
 These features will be use to check data type
 
@@ -56,14 +56,12 @@ isJSONObjectString('{ "x": "1", "y": 1, "z": true, "xx": null, "yy": {}, "zz": [
 isJSONObjectString('["1", 1, true, null, {}, []]'); // true
 ```
 
-## Special Type check apis
+### Special Type check apis
 
 These features will be use in special cases like the DOM element or empty value check
 
 ```javascript
-import { type } from 'emnida';
-
-const { isArrayLikeObject, isElement, isEmpty, isIterableObject, isPrimitive } = type;
+import { isArrayLikeObject, isElement, isEmpty, isIterableObject, isPrimitive } from 'emnida';
 
 isPrimitive('test'); // true
 isPrimitive(1); // true
@@ -80,7 +78,7 @@ isEmpty(null); // true
 isIterableObject([]); // true
 ```
 
-## Number Type check apis
+### Number Type check apis
 
 These features will be evaluates an arguments in the various cases of number type
 
@@ -124,7 +122,7 @@ isFloat(0.1); // true
 isFloat(1); // false
 ```
 
-## isEqual
+### isEqual
 
 This feature will be use to compare two arguments like the code follows
 
@@ -214,7 +212,7 @@ isEqual(set1, set2); // true
 isEqual(set1, set3); // false
 ```
 
-## isEqualAtStringFunction or isEqualAtStringSymbol
+### isEqualAtStringFunction or isEqualAtStringSymbol
 
 Below code will be evaluated to a `false` by the javascript mechanism, but you may will be able to turn to a `true` via use these features to use. 
 

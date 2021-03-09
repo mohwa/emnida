@@ -9,7 +9,7 @@ import fs from 'fs-extra';
 import markdownInclude from 'markdown-include';
 
 const files = ['lib/type.js', 'lib/number.js', 'lib/index.js'];
-const md = jsdoc2md.renderSync({ files });
+const md = jsdoc2md.renderSync({ files, ['heading-depth']: 3 });
 
 fs.outputFileSync(path.resolve(__dirname, '../docTemplates/examples.md'), md);
 

@@ -17,7 +17,7 @@ IE9 later, All modern browsers(Chrome, Safari, Edge ...), NodeJS(`10.0.0` versio
 
 # How to Use
 
-## Type check apis
+### Type check apis
 
 These features will be use to check data type
 
@@ -75,14 +75,12 @@ isJSONObjectString('{ "x": "1", "y": 1, "z": true, "xx": null, "yy": {}, "zz": [
 isJSONObjectString('["1", 1, true, null, {}, []]'); // true
 ```
 
-## Special Type check apis
+### Special Type check apis
 
 These features will be use in special cases like the DOM element or empty value check
 
 ```javascript
-import { type } from 'emnida';
-
-const { isArrayLikeObject, isElement, isEmpty, isIterableObject, isPrimitive } = type;
+import { isArrayLikeObject, isElement, isEmpty, isIterableObject, isPrimitive } from 'emnida';
 
 isPrimitive('test'); // true
 isPrimitive(1); // true
@@ -99,7 +97,7 @@ isEmpty(null); // true
 isIterableObject([]); // true
 ```
 
-## Number Type check apis
+### Number Type check apis
 
 These features will be evaluates an arguments in the various cases of number type
 
@@ -143,7 +141,7 @@ isFloat(0.1); // true
 isFloat(1); // false
 ```
 
-## isEqual
+### isEqual
 
 This feature will be use to compare two arguments like the code follows
 
@@ -233,7 +231,7 @@ isEqual(set1, set2); // true
 isEqual(set1, set3); // false
 ```
 
-## isEqualAtStringFunction or isEqualAtStringSymbol
+### isEqualAtStringFunction or isEqualAtStringSymbol
 
 Below code will be evaluated to a `false` by the javascript mechanism, but you may will be able to turn to a `true` via use these features to use. 
 
@@ -247,7 +245,7 @@ isEqualAtStringFunction(() => {}, () => {}); // true
 isEqualAtStringSymbol(Symbol(3), Symbol(3)); // true
 ```
 
-## Functions
+### Functions
 
 <dl>
 <dt><a href="#isString">isString(value)</a> ⇒ <code>boolean</code></dt>
@@ -374,7 +372,7 @@ isEqualAtStringSymbol(Symbol(3), Symbol(3)); // true
 
 <a name="isString"></a>
 
-## isString(value) ⇒ <code>boolean</code>
+### isString(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is string type
 
 **Kind**: global function  
@@ -389,7 +387,7 @@ isString('test'); // true
 ```
 <a name="isNumber"></a>
 
-## isNumber(value) ⇒ <code>boolean</code>
+### isNumber(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is number type
 
 **Kind**: global function  
@@ -404,7 +402,7 @@ isNumber(1); // true
 ```
 <a name="isBoolean"></a>
 
-## isBoolean(value) ⇒ <code>boolean</code>
+### isBoolean(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is boolean type
 
 **Kind**: global function  
@@ -419,7 +417,7 @@ isBoolean(true); // true
 ```
 <a name="isUndefined"></a>
 
-## isUndefined(value) ⇒ <code>boolean</code>
+### isUndefined(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is undefined
 
 **Kind**: global function  
@@ -434,7 +432,7 @@ isUndefined(undefined); // true
 ```
 <a name="isDefined"></a>
 
-## isDefined(value) ⇒ <code>boolean</code>
+### isDefined(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is defined
 
 **Kind**: global function  
@@ -449,7 +447,7 @@ isDefined(undefined); // false
 ```
 <a name="isNull"></a>
 
-## isNull(value) ⇒ <code>boolean</code>
+### isNull(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is null
 
 **Kind**: global function  
@@ -464,7 +462,7 @@ isNull(null); // true
 ```
 <a name="isSymbol"></a>
 
-## isSymbol(value) ⇒ <code>boolean</code>
+### isSymbol(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is symbol type
 
 **Kind**: global function  
@@ -479,7 +477,7 @@ isSymbol(Symbol(1)); // true
 ```
 <a name="isBigInt"></a>
 
-## isBigInt(value) ⇒ <code>boolean</code>
+### isBigInt(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is bigint type
 
 **Kind**: global function  
@@ -494,7 +492,7 @@ isBigInt(10n); // true
 ```
 <a name="isFunction"></a>
 
-## isFunction(value) ⇒ <code>boolean</code>
+### isFunction(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is function type
 
 **Kind**: global function  
@@ -509,7 +507,7 @@ isFunction(function(){}); // true
 ```
 <a name="isObject"></a>
 
-## isObject(value) ⇒ <code>boolean</code>
+### isObject(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is object type
 
 **Kind**: global function  
@@ -524,7 +522,7 @@ isObject(null); // true
 ```
 <a name="isObjectNotIncludeNull"></a>
 
-## isObjectNotIncludeNull(value) ⇒ <code>boolean</code>
+### isObjectNotIncludeNull(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is object type not included null
 
 **Kind**: global function  
@@ -539,7 +537,7 @@ isObject(null); // false
 ```
 <a name="isPlainObject"></a>
 
-## isPlainObject(value) ⇒ <code>boolean</code>
+### isPlainObject(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is plain object
 
 **Kind**: global function  
@@ -554,7 +552,7 @@ isPlainObject({}); // true
 ```
 <a name="isArray"></a>
 
-## isArray(value) ⇒ <code>boolean</code>
+### isArray(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is array type
 
 **Kind**: global function  
@@ -569,7 +567,7 @@ isArray([]); // true
 ```
 <a name="isRegExp"></a>
 
-## isRegExp(value) ⇒ <code>boolean</code>
+### isRegExp(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is regex
 
 **Kind**: global function  
@@ -584,7 +582,7 @@ isRegExp(new RegExp('\s+')); // true
 ```
 <a name="isElement"></a>
 
-## isElement(value) ⇒ <code>boolean</code>
+### isElement(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is element
 
 **Kind**: global function  
@@ -599,7 +597,7 @@ isElement(document.documentElement); // true
 ```
 <a name="isDate"></a>
 
-## isDate(value) ⇒ <code>boolean</code>
+### isDate(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is date
 
 **Kind**: global function  
@@ -614,7 +612,7 @@ isDate(new Date()); // true
 ```
 <a name="isArrayLikeObject"></a>
 
-## isArrayLikeObject(value) ⇒ <code>boolean</code>
+### isArrayLikeObject(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is array like object
 
 **Kind**: global function  
@@ -629,7 +627,7 @@ isArrayLikeObject([]); // true
 ```
 <a name="isIterableObject"></a>
 
-## isIterableObject(value) ⇒ <code>boolean</code>
+### isIterableObject(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is iterable object
 
 **Kind**: global function  
@@ -644,7 +642,7 @@ isIterableObject([]); // true
 ```
 <a name="isMap"></a>
 
-## isMap(value) ⇒ <code>boolean</code>
+### isMap(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is Map
 
 **Kind**: global function  
@@ -659,7 +657,7 @@ isMap(new Map()); // true
 ```
 <a name="isSet"></a>
 
-## isSet(value) ⇒ <code>boolean</code>
+### isSet(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is Set
 
 **Kind**: global function  
@@ -674,7 +672,7 @@ isSet(new Set()); // true
 ```
 <a name="isWeakMap"></a>
 
-## isWeakMap(value) ⇒ <code>boolean</code>
+### isWeakMap(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is WeakMap
 
 **Kind**: global function  
@@ -689,7 +687,7 @@ isWeakMap(new WeakMap()); // true
 ```
 <a name="isWeakSet"></a>
 
-## isWeakSet(value) ⇒ <code>boolean</code>
+### isWeakSet(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is WeakSet
 
 **Kind**: global function  
@@ -704,7 +702,7 @@ isWeakSet(new WeakSet()); // true
 ```
 <a name="isPrimitive"></a>
 
-## isPrimitive(value) ⇒ <code>boolean</code>
+### isPrimitive(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is primitive type
 
 **Kind**: global function  
@@ -719,7 +717,7 @@ isPrimitive('test'); // true
 ```
 <a name="isEmpty"></a>
 
-## isEmpty(value) ⇒ <code>boolean</code>
+### isEmpty(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is empty
 
 **Kind**: global function  
@@ -734,7 +732,7 @@ isEmpty(1); // true
 ```
 <a name="isJSONPlainObjectString"></a>
 
-## isJSONPlainObjectString(value) ⇒ <code>boolean</code>
+### isJSONPlainObjectString(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is json plain object string
 
 **Kind**: global function  
@@ -749,7 +747,7 @@ isJSONPlainObjectString('{ "x": 1 }'); // true
 ```
 <a name="isJSONArrayString"></a>
 
-## isJSONArrayString(value) ⇒ <code>boolean</code>
+### isJSONArrayString(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is json array string
 
 **Kind**: global function  
@@ -764,7 +762,7 @@ isJSONArrayString('[1]'); // true
 ```
 <a name="isJSONObjectString"></a>
 
-## isJSONObjectString(value) ⇒ <code>boolean</code>
+### isJSONObjectString(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is json plain object string or json array string
 
 **Kind**: global function  
@@ -779,7 +777,7 @@ isJSONObjectString('{ "x": 1 }'); // true
 ```
 <a name="isFloat"></a>
 
-## isFloat(value) ⇒ <code>boolean</code>
+### isFloat(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is floating point number
 
 **Kind**: global function  
@@ -794,7 +792,7 @@ isFloat(1.1); // true
 ```
 <a name="isFinite"></a>
 
-## isFinite(value) ⇒ <code>boolean</code>
+### isFinite(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is finite number
 
 **Kind**: global function  
@@ -809,7 +807,7 @@ isFinite(1); // true
 ```
 <a name="isInfinite"></a>
 
-## isInfinite(value) ⇒ <code>boolean</code>
+### isInfinite(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is infinite number
 
 **Kind**: global function  
@@ -824,7 +822,7 @@ isInfinite(null); // true
 ```
 <a name="isNaN"></a>
 
-## isNaN(value) ⇒ <code>boolean</code>
+### isNaN(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is not a number
 
 **Kind**: global function  
@@ -839,7 +837,7 @@ isNaN(NaN); // true
 ```
 <a name="isGreater"></a>
 
-## isGreater(value, comparisonValue) ⇒ <code>boolean</code>
+### isGreater(value, comparisonValue) ⇒ <code>boolean</code>
 This function evaluates whether first argument is greater
 
 **Kind**: global function  
@@ -855,7 +853,7 @@ isGreater(10, 1); // true
 ```
 <a name="isGreaterOrEqual"></a>
 
-## isGreaterOrEqual(value, comparisonValue) ⇒ <code>boolean</code>
+### isGreaterOrEqual(value, comparisonValue) ⇒ <code>boolean</code>
 This function evaluates whether first argument is greater or equal
 
 **Kind**: global function  
@@ -871,7 +869,7 @@ isGreaterOrEqual(10, 10); // true
 ```
 <a name="isLess"></a>
 
-## isLess(value, comparisonValue) ⇒ <code>boolean</code>
+### isLess(value, comparisonValue) ⇒ <code>boolean</code>
 This function evaluates whether first argument is less
 
 **Kind**: global function  
@@ -887,7 +885,7 @@ isLess(1, 10); // true
 ```
 <a name="isLessOrEqual"></a>
 
-## isLessOrEqual(value, comparisonValue) ⇒ <code>boolean</code>
+### isLessOrEqual(value, comparisonValue) ⇒ <code>boolean</code>
 This function evaluates whether first argument is less or equal
 
 **Kind**: global function  
@@ -903,7 +901,7 @@ isLessOrEqual(10, 10); // true
 ```
 <a name="isZero"></a>
 
-## isZero(value) ⇒ <code>boolean</code>
+### isZero(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is zero
 
 **Kind**: global function  
@@ -918,7 +916,7 @@ isZero(0); // true
 ```
 <a name="isInteger"></a>
 
-## isInteger(value) ⇒ <code>boolean</code>
+### isInteger(value) ⇒ <code>boolean</code>
 This function evaluates whether an arguments is integer
 
 **Kind**: global function  
@@ -933,7 +931,7 @@ isInteger(1); // true
 ```
 <a name="isEqual"></a>
 
-## isEqual(value, comparisonValue) ⇒ <code>boolean</code>
+### isEqual(value, comparisonValue) ⇒ <code>boolean</code>
 This function evaluates whether equal first argument and second argument
 
 **Kind**: global function  
@@ -949,7 +947,7 @@ isEqual(1, 1); // true
 ```
 <a name="isEqualAtStringFunction"></a>
 
-## isEqualAtStringFunction(value, comparisonValue) ⇒ <code>boolean</code>
+### isEqualAtStringFunction(value, comparisonValue) ⇒ <code>boolean</code>
 This function evaluates whether equal first function and second function casted as string
 
 **Kind**: global function  
@@ -965,7 +963,7 @@ isEqualAtStringFunction(function() {}, function() {}); // true
 ```
 <a name="isEqualAtStringSymbol"></a>
 
-## isEqualAtStringSymbol(value, comparisonValue) ⇒ <code>boolean</code>
+### isEqualAtStringSymbol(value, comparisonValue) ⇒ <code>boolean</code>
 This function evaluates whether equal first symbol and second symbol casted as string
 
 **Kind**: global function  
